@@ -90,19 +90,18 @@ async def stats(ctx):
 
 async def start(ctx):
     buttons = ButtonMaker()
-    buttons.ubutton("Repo", "https://github.com/Hrishi2861/MLSB-Modified")
-    buttons.ubutton("Owner", "https://t.me/hrishikesh2861")
+    buttons.ubutton("Owner", "https://t.me/tahmid8464")
+    buttons.ubutton("Powered by", "https://t.me/bdh_premium_shop")
     reply_markup = buttons.build_menu(2)
     if await CustomFilters.authorized(ctx):
         start_string = f"""
-This bot can mirror all your links|files|torrents to Google Drive or any rclone cloud or to telegram.
-Type /{BotCommands.HelpCommand} to get a list of available commands
+This bot can mirror all your links|files|torrents to Google Drive or any rclone cloud.
 """
         await sendMessage(ctx.event.message, start_string, reply_markup)
     else:
         await sendMessage(
             ctx.event.message,
-            "You Are not authorized user! Deploy your own mirror-leech bot",
+            "Bot is up and running.",
             reply_markup,
         )
 
